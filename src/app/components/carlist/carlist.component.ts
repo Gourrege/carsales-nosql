@@ -41,5 +41,11 @@ export class CarlistComponent {
     return false;
   }
 
+  refreshCars()
+  {
+    this.getCars();
+
+  }
+
 
 }

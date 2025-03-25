@@ -21,5 +21,5 @@
    </div>
   
    <div class='container'>
-      <app-car *ngFor="let carData of carsData" [carData]="carData"></app-car>
+      <app-car *ngFor="let carData of carsData" [carData]="carData" (carDeletedEvent)="refreshCars()"></app-car>
    </div>
