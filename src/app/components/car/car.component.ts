@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { CarApiService } from '../../service/car-api.service';
 import { Input } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 import { Car } from '../../interface/car';
 
 
@@ -14,6 +15,7 @@ import { Car } from '../../interface/car';
 export class CarComponent {
 
   @Input() carData?:Car;
+  @Output() carDeletedEvent = new EventEmitter<string>()
   carImageWidth:number = 300
 
   constructor(private _carAPIService:CarApiService)
@@ -25,6 +27,8 @@ export class CarComponent {
       { 
         console.log(result);
       });
+
+      this.carDeletedEvent.emit("Car Got Deleted");
   }
 
 }
