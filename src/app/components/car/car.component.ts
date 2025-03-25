@@ -14,7 +14,7 @@ import { Car } from '../../interface/car';
 export class CarComponent {
 
   @Input() carData?:Car;
-  private carImageWidth:number = 300
+  carImageWidth:number = 300
 
   constructor(private _carAPIService:CarApiService)
   {

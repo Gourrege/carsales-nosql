@@ -2,17 +2,18 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarApiService } from '../../service/car-api.service';
 import { Car, NewCar } from '../../interface/car';
+import { CarComponent } from '../car/car.component';
 
 @Component({
   selector: 'app-carlist',
-  imports: [CommonModule],
+  imports: [CommonModule, CarComponent],
   templateUrl: './carlist.component.html',
   styleUrl: './carlist.component.css'
 })
 export class CarlistComponent {
 
-  private carsData: Car | any
-  private choice: boolean = false
+  carsData: Car | any
+  show: boolean = false
 
   constructor(private _carAPIService:CarApiService)
   {
